@@ -4,6 +4,10 @@
   "description": "A CLI from the JS TDD Course that converts Bitcoin to any currency in the universe",
   "main": "index.js",
   "scripts": {
+    "clear": "./node_modules/.bin/rimraf bin",
+    "build": "npm run clear && .\\node_modules\\.bin\\babel --out-dir bin src",
+    "build:watch": "npm run build -- --watch",
+    "btc-converter": "node bin/main.js",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter=nyan",
     "test:tdd": "npm run test -- --watch",
@@ -38,6 +42,7 @@
   },
   "homepage": "https://github.com/Juniorr452/btc-converter#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
@@ -49,6 +54,7 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^2.20.0",
+    "rimraf": "^2.6.3"
   }
 }
