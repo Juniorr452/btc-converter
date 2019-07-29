@@ -1,0 +1,51 @@
+{
+  "name": "btc-converter",
+  "version": "1.0.0",
+  "description": "A CLI from the JS TDD Course that converts Bitcoin to any currency in the universe",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter=nyan",
+    "test:tdd": "npm run test -- --watch",
+    "coverage": "nyc npm test"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "btc-converter": "bin/main.js"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juniorr452/btc-converter.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "lib"
+  ],
+  "author": "Juniorr452 <http://github.com/juniorr452>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Juniorr452/btc-converter/issues"
+  },
+  "homepage": "https://github.com/Juniorr452/btc-converter#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  }
+}
